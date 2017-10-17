@@ -1,0 +1,22 @@
+<%= form_with(model: number_fact, local: true) do |form| %>
+  <div class="field">
+    <%= form.hidden_field :fun_number %>
+    <%= form.hidden_field :fun_year %>
+    <%= form.hidden_field :fun_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :choice, 'Number' %>
+    <%= form.radio_button :choice, 'Number' %>
+    <%= form.label :choice, 'Date' %>
+    <%= form.radio_button :choice, 'Date' %>
+    <%= form.label :choice, 'Year' %>
+    <%= form.radio_button :choice, 'Year' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Generate Random Fun Number Fact' %>
+  </div>
+
+
+<% end %>

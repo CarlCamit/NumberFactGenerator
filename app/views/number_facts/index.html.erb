@@ -1,0 +1,33 @@
+<div class="container">
+  <p id="notice"><%= notice %></p><br>
+  <h1>Number Facts</h1>
+
+  <div class="container">
+    <% @number_facts.each do |number_fact| %>
+      <% case number_fact.choice when "Number" %>
+      <div class="card card-body" style="max-width: 20rem;">
+        <div class="card-block">
+          <h4 class="card-title">Number: <%= number_fact.fun_number %></h4>
+          <%= link_to 'Show', number_fact, class:"btn btn-primary" %>
+        </div>
+      </div>
+      <% when "Date" %>
+      <div class="card card-body" style="max-width: 20rem;">
+        <div class="card-block">
+          <h4 class="card-title">Date: <%= format_date number_fact.fun_date %></h4>
+          <%= link_to 'Show', number_fact, class:"btn btn-primary" %>
+        </div>
+      </div>
+      <% when "Year" %>
+      <div class="card card-body" style="max-width: 20rem;">
+        <div class="card-block">
+          <h4 class="card-title">Year: <%= number_fact.fun_year %></h4>
+          <%= link_to 'Show', number_fact, class:"btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+    <%= link_to 'New Number Fact', new_number_fact_path, class:"btn btn-primary" %>
+  </div>
+
+</div>

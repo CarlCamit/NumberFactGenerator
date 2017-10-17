@@ -1,0 +1,24 @@
+<div class="container">
+  <p id="notice"><%= notice %></p><br>
+
+  <div>
+    <% case @number_fact.choice when "Number" %>
+    <div class="card card-body" style="max-width: 20rem;">
+      <h4 class="card-title">Number: <%= @number_fact.fun_number %></h4>
+      <%= @number_fact.random_number %>
+    </div>
+    <% when "Date" %>
+    <div class="card card-body" style="max-width: 20rem;">
+      <h4 class="card-title">Date: <%= format_date @number_fact.fun_date %></h4>
+      <%= @number_fact.random_date %>
+    </div>
+    <% when "Year" %>
+    <div class="card card-body" style="max-width: 20rem;">
+      <h4 class="card-title">Year: <%= @number_fact.fun_year %></h4>
+      <%= @number_fact.random_year %>
+    </div>
+    <% end %>
+  </div>
+
+  <%= link_to 'Back', number_facts_path, class:"btn btn-primary" %>
+</div>
